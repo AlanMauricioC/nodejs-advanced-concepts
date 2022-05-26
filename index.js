@@ -1,4 +1,4 @@
-import express from "Express";
+const express = require('express');
 const app = express();
 
 function doWork(duration) {
