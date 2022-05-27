@@ -4,6 +4,9 @@ if (cluster.isMaster) {
   //cause index.js to be executed *again* but
   // in child mode
   cluster.fork();
+  cluster.fork();
+  cluster.fork();
+  cluster.fork();
 } else {
   //server related code
   // I'm a child c:
@@ -19,6 +22,10 @@ if (cluster.isMaster) {
   app.get("/", (_, res) => {
     doWork(5000);
     res.send("hi there");
+  });
+
+  app.get("/fast", (_, res) => {
+    res.send("this was fast there");
   });
 
   app.listen(3000);
