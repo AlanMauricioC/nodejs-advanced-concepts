@@ -1,0 +1,11 @@
+* Notes
+** Clustering
+
+one way to solve single threaded node loop is using clustering
+
+cluster manager checks the health and manages the instances of the node applications.
+can start, stop.. administrate worker instances of our node applications.
+
+the cluster manager require the cluster manager module.
+*** Cluster Manager
+cluster.fork() executes multiple times the same index.js file but creates a new worker instance
