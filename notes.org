@@ -11,3 +11,6 @@ the cluster manager require the cluster manager module.
 cluster.fork() executes multiple times the same index.js file but creates a new worker instance
 
 apache benchmark ~ab~
+~ab -c 2 -n 4  localhost:3000/~
+don't over cluster!
+try to match the children with the number of cpu threads

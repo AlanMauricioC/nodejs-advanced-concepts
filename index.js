@@ -1,3 +1,4 @@
+process.env.UV_THREADPOOL_SIZE = 1;
 const cluster = require("cluster");
 
 if (cluster.isMaster) {
@@ -5,23 +6,18 @@ if (cluster.isMaster) {
   // in child mode
   cluster.fork();
   cluster.fork();
-  cluster.fork();
-  cluster.fork();
 } else {
   //server related code
   // I'm a child c:
 
+  const crypto = require("crypto");
   const express = require("express");
   const app = express();
 
-  function doWork(duration) {
-    const start = Date.now();
-    while (Date.now() - start < duration) {}
-  }
-
   app.get("/", (_, res) => {
-    doWork(5000);
-    res.send("hi there");
+    crypto.pbkdf2("a", "b", 100000, 512, "sha512", () => {
+      res.send("hi there");
+    });
   });
 
   app.get("/fast", (_, res) => {
