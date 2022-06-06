@@ -18,6 +18,19 @@ don't over cluster!
 try to match the children with the number of cpu threads
 
 *** PM2 Cluster manager
+pm2 is used mostly on production
+
+installation:
 #+begin_src 
  sudo npm i pm2 -g
+#+end_src
+
+examples of usage:
+
+#+begin_src shell
+pm2 start index.js -i 0
+pm2 list               
+pm2 show index         
+pm2 monit              
+pm2 delete index       
 #+end_src
