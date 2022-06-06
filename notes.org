@@ -12,5 +12,12 @@ cluster.fork() executes multiple times the same index.js file but creates a new 
 
 apache benchmark ~ab~
 ~ab -c 2 -n 4  localhost:3000/~
+
+Note: 
 don't over cluster!
 try to match the children with the number of cpu threads
+
+*** PM2 Cluster manager
+#+begin_src 
+ sudo npm i pm2 -g
+#+end_src
