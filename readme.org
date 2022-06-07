@@ -21,7 +21,7 @@ try to match the children with the number of cpu threads
 pm2 is used mostly on production
 
 installation:
-#+begin_src 
+#+begin_src shell 
  sudo npm i pm2 -g
 #+end_src
 
