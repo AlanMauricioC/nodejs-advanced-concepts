@@ -43,5 +43,10 @@ A lot of code usually uses libuv library and uses the threads on the machine.
 
 The worker interface creates a worker thread and comunicates using postMessage and onmessage and will invoke the function assigned to the worker.
 
+#+begin_src shell
+ab -c 1 -n 1 localhost:3000
+#+end_src
+
+
 
 
