@@ -34,3 +34,14 @@ pm2 show index
 pm2 monit              
 pm2 delete index       
 #+end_src
+
+** Worker threads
+* webworker-threads
+
+Web workers are considered stables. [[https://nodejs.org/docs/latest-v16.x/api/worker_threads.html][Node 16 documentation.]] 
+A lot of code usually uses libuv library and uses the threads on the machine.
+
+The worker interface creates a worker thread and comunicates using postMessage and onmessage and will invoke the function assigned to the worker.
+
+
+
